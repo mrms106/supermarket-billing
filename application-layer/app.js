@@ -2,6 +2,7 @@ const express= require("express")
 const mongoose=require("mongoose")
 const cors=require("cors")
 const app = express()
+const products=require("./modules/products")
 
 // database connection
 main().catch(err => console.log(err));
