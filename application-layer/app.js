@@ -9,7 +9,7 @@ main().catch(err => console.log(err));
 async function main() {
  const databaseUrl='mongodb://127.0.0.1:27017/supermarket'
   await mongoose.connect(databaseUrl);
-  console.log("The Database is Connected....")
+  console.log("Connected to the Database successfully")
 }
 
 // cors configaration 
@@ -25,5 +25,5 @@ app.get("/",(req,res)=>{
 })
 
 app.listen("8080",(req,res)=>{
-    console.log("server started successfully on 8080...")
+    console.log("server started successfully on 8080 port")
 })
