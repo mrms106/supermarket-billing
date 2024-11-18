@@ -6,6 +6,7 @@ const products=require("./modules/products")
 const passport = require("passport")
 const session=require("express-session")
 const User=require("./modules/user")
+const userRoute=require('./routes/user')
 
 // database connection
 main().catch(err => console.log(err));
@@ -18,7 +19,7 @@ async function main() {
 
 // cors configaration 
 const coreOptions={
-    origin:"http://localhost:5173",
+    origin:"*",
     methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials:true
   }
@@ -51,6 +52,10 @@ app.use(express.json())
 app.get("/",(req,res)=>{
     res.send("working backend")
 })
+
+// using routes
+
+app.use('/api',userRoute)
 
 app.listen("8080",(req,res)=>{
     console.log("server started successfully on 8080 port")
