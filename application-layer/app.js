@@ -3,6 +3,9 @@ const mongoose=require("mongoose")
 const cors=require("cors")
 const app = express()
 const products=require("./modules/products")
+const passport = require("passport")
+const session=require("express-session")
+const User=require("./modules/user")
 
 // database connection
 main().catch(err => console.log(err));
@@ -20,6 +23,30 @@ const coreOptions={
     credentials:true
   }
 app.use(cors(coreOptions))
+
+// creating session
+const sessionOptions={
+  secret:"secret",
+  resave:false,
+  saveUninitialized:false,
+  cookie:{
+    expires:Date.now()+ 2*24*60*60*1000,
+    maxAge: 24 * 60 * 60 * 1000,
+    secure:true
+}
+}
+app.use(session(sessionOptions))
+
+// user initialization
+app.use(passport.initialize())
+app.use(passport.session())
+
+passport.use(User.createStrategy())
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+
+// parse data
+app.use(express.json())
 
 app.get("/",(req,res)=>{
     res.send("working backend")

@@ -1,4 +1,9 @@
 
 .navbar{
     background-color: white !important;
+    max-height: 80px !important;
+}
+img{
+    width: 150px;
+    height: 150px;
 }
