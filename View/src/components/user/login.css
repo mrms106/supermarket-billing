@@ -17,14 +17,14 @@
     border: none;
     border-bottom: 2px solid black;
    outline: none;
-   color: black;
+   color: rgb(45, 45, 101);
    
 }
 
 .loginform form input:focus {
     box-shadow: 0 0 5px rgba(38, 38, 38, 0.5); 
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid rgb(45, 45, 101);
   }
 
   .loginform form button{
@@ -32,6 +32,11 @@
     background-color: white;
     height: 40px;
     border-radius: 10px;
-    border: 2px solid blue;
+    border: 2px solid rgb(45, 45, 101);
     font-size: 18px;
+  }
+
+  .loginform form button:hover{
+    color: white;
+    background-color: rgb(45, 45, 101);
   }
