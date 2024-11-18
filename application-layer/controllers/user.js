@@ -2,8 +2,8 @@ const passport=require('passport')
 const User=require('../modules/user')
 
 module.exports.signup=async(req,res)=>{
-    const {email,password}=req.body
-    const user = new User({ email });
+    const {email,name,password}=req.body
+    const user = new User({ email,name });
     try{
         User.register(user,password,(err,user)=>{
             if(err){
