@@ -7,6 +7,7 @@ import Startscreen from './components/user/startsreen';
 import PanelMain from './components/panel/panelmain';
 import Showproduct from './components/product/showproduct';
 import UpdateProduct from './components/product/updateproduct';
+import Addproduct from './components/product/addproduct';
 function App() {
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/dashboard' element={<PanelMain/>} />
           <Route path='/allproducts' element={<Showproduct/>} />
           <Route path='/updateproduct/:id' element={<UpdateProduct/>} />
+          <Route path='/addproduct' element={<Addproduct/>} />
     </Routes>
    </Router>
     </>

@@ -9,25 +9,26 @@ module.exports.products=async(req,res)=>{
     }
 }
 module.exports.addproduct = async (req, res) => {
-    const product = req.body;
-  
-    // Validate required fields (example)
-    if (!product.name || !product.price) {
-      return res.status(400).json({ message: "Product name and price are required" });
+  const { name, price, stock, brand, category, image } = req.body;
+  console.log( name, price, stock, brand, category, image)
+
+  if (!name || !price || !stock || !brand || !category || !image) {
+    return res.status(400).json({ message: "All fields are required." });
+  }
+
+  try {
+    const newProduct = new products({ name, price, stock, brand, category, image });
+    console.log(newProduct)
+    await newProduct.save();
+    res.status(201).json({ message: "Product added successfully." });
+  } catch (err) {
+    if (err.name === "ValidationError") {
+      return res.status(400).json({ message: "Validation failed", errors: err.errors });
     }
-  
-    try {
-      const newProduct = new products(product);
-      await newProduct.save();
-      res.status(201).json({ message: "Product is added" });
-    } catch (err) {
-      if (err.name === 'ValidationError') {
-        return res.status(400).json({ message: "Validation failed", errors: err.errors });
-      }
-      console.error(err);
-      res.status(500).json({ message: "Something went wrong", error: err });
-    }
-  };
+    console.error(err);
+    res.status(500).json({ message: "Something went wrong", error: err });
+  }
+};
 
   module.exports.updateproduct = async (req, res) => {
     const productId=req.params.id
