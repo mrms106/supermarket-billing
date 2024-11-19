@@ -7,6 +7,8 @@ const passport = require("passport")
 const session=require("express-session")
 const User=require("./modules/user")
 const userRoute=require('./routes/user')
+const employeeRoute=require('./routes/employee')
+const Employee=require('./modules/employee')
 
 // database connection
 main().catch(err => console.log(err));
@@ -46,6 +48,10 @@ passport.use(User.createStrategy())
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
+passport.use(Employee.createStrategy())
+passport.serializeUser(Employee.serializeUser())
+passport.deserializeUser(Employee.deserializeUser())
+
 // parse data
 app.use(express.json())
 
@@ -56,6 +62,7 @@ app.get("/",(req,res)=>{
 // using routes
 
 app.use('/api',userRoute)
+app.use('/api/employee',employeeRoute)
 
 app.listen("8080",(req,res)=>{
     console.log("server started successfully on 8080 port")

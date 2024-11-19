@@ -1,8 +1,9 @@
 const mongoose=require("mongoose")
+const passportLocalMongoose=require("passport-local-mongoose")
 const Schema=mongoose.Schema
 
 const empSchema=new Schema({
-    empID:{
+    empId:{
         type:String,
         required:true,
         unique:true
@@ -13,5 +14,6 @@ const empSchema=new Schema({
     }
 });
 
+empSchema.plugin(passportLocalMongoose,{ usernameField:'empId'})
 
 module.exports=mongoose.model('Employee',empSchema)
