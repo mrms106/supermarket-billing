@@ -5,6 +5,7 @@ import Login from './components/user/login';
 import Signup from './components/user/signup';
 import Startscreen from './components/user/startsreen';
 import PanelMain from './components/panel/panelmain';
+import Showproduct from './components/product/showproduct';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/signup' element={<Signup/>} />
           <Route path='/start' element={<Startscreen/>} />
           <Route path='/dashboard' element={<PanelMain/>} />
+          <Route path='/allproducts' element={<Showproduct/>} />
     </Routes>
    </Router>
     </>
