@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import './product.css'
+import { useNavigate } from "react-router-dom"
 
 export default function Showproduct(){
     const [products,setproducts]=useState([])
-
+    const navigate= useNavigate()
     const fetchproducts=async()=>{
         const responce=await fetch("http://localhost:8080/api/product")
         if(!responce.ok){
@@ -31,7 +32,7 @@ export default function Showproduct(){
             {
                 products.map((item)=>(
                     <div className="card maincard" style={{width: "18rem"}}  >
-                    <img src={item.image} className="card-img-top" alt="Book Image"/>
+                    <img src={item.image} className="card-img-top" alt="product Image"/>
                     <div className="card-body">
                       <p>Name: <b className="card-title">{item.name}</b></p>
                      
@@ -42,7 +43,7 @@ export default function Showproduct(){
                    </p>
                       <p>
                      
-                      <button className="btn btn-primary">update  </button>
+                      <button className="btn btn-primary" onClick={()=>navigate(`/updateproduct/${item._id}`)}>update  </button>
                       <button className="btn btn-secondary" onClick={()=>deleteproduct(item._id)}>remove  </button>
 
                      

@@ -76,3 +76,18 @@ module.exports.addproduct = async (req, res) => {
       res.status(500).json({ message: "Something went wrong", error: err });
     }
   };
+
+  module.exports.getproduct=async(req,res)=>{
+    const productId=req.params.id
+    console.log(productId)
+    try{
+      const product=await products.findById(productId)
+      res.status(200).json({message:"product fetched success",product:product})
+      if (!product) {
+        return res.status(404).json({ message: "Product not found" });
+    }
+    }catch(err){
+      console.log(err)
+      res.status(400).json({message:"something went wrong",err:err})
+    }
+  }

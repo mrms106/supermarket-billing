@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import './panel.css'
 
 export default function PanelMain(){
+  const navigate=useNavigate()
     return(
         <>
         <div className='dashboard-title'>
@@ -9,7 +11,7 @@ export default function PanelMain(){
         <div className="dashboard-main">
             
            <div>
-           <div className="dashboard-box">show Products </div>
+           <div className="dashboard-box" onClick={()=>navigate('/allproducts')}>show Products </div>
            <div className="dashboard-box"> show  Employee </div>
            </div>
            <div>
