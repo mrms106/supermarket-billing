@@ -1,5 +1,5 @@
 const express= require("express")
-const mongoose=require("mongoose")
+const mongoose=require("mongoose") 
 const cors=require("cors")
 const app = express()
 const products=require("./modules/products")
@@ -8,6 +8,7 @@ const session=require("express-session")
 const User=require("./modules/user")
 const userRoute=require('./routes/user')
 const employeeRoute=require('./routes/employee')
+const productRoute=require('./routes/product')
 const Employee=require('./modules/employee')
 
 // database connection
@@ -63,6 +64,7 @@ app.get("/",(req,res)=>{
 
 app.use('/api',userRoute)
 app.use('/api/employee',employeeRoute)
+app.use('/api',productRoute)
 
 app.listen("8080",(req,res)=>{
     console.log("server started successfully on 8080 port")
