@@ -79,7 +79,6 @@ module.exports.addproduct = async (req, res) => {
 
   module.exports.getproduct=async(req,res)=>{
     const productId=req.params.id
-    console.log(productId)
     try{
       const product=await products.findById(productId)
       res.status(200).json({message:"product fetched success",product:product})

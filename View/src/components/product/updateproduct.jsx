@@ -1,9 +1,11 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import '../user/login.css'
 import { useEffect, useState } from 'react'
 export default function UpdateProduct(){
   const { id: productId } = useParams();
   const[product,setproduct]=useState({})
+  const navigate=useNavigate()
+
 
   const fetchProduct = async () => {
     try {
@@ -23,21 +25,40 @@ export default function UpdateProduct(){
       fetchProduct();
     }
   }, [productId]);
-  
+
+  const oninputChange=(e)=>{
+    setproduct({...product,[e.target.name]:e.target.value})
+  }
+  const onformsubmit= async(e)=>{
+    e.preventDefault()
+    const responce=await fetch(`http://localhost:8080/api/updateproduct/${productId}`,{
+      method:"POST",
+      headers:{
+        'Content-type':'application/json'
+      },
+      body:JSON.stringify(product),
+      credentials:'include'
+    })
+    if(!responce.ok){
+      alert("problem in update")
+    }
+    alert("product updated successfully..!")
+    navigate("/allproducts")
+  }
     return(
          <>
          <div className='update-heading'><h2>Update Product</h2></div>
        
           <div className='loginform'>
-            <form >
-                <input type="name" name="name" ></input>
+            <form onChange={oninputChange} onSubmit={onformsubmit}>
+                <input type="name" name="name" value={product.name}></input>
                 <div>
-                <input type="number" name="price" ></input>
-                <input type="number" name="stock" ></input>
+                <input type="number" name="price" value={product.price}></input>
+                <input type="number" name="stock" value={product.stock} ></input>
                 </div>
                 <div>
-                <input type="brand" name="brand" ></input>
-                <input type="catagory" name="catagory" ></input>
+                <input type="brand" name="brand" value={product.brand} ></input>
+                <input type="catagory" name="catagory" value={product.category}></input>
                 </div>
                 <button>Update Product</button>
             </form>
