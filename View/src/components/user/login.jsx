@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './login.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login(){
+    const navigate= useNavigate()
     const [loginform,setloginform]=useState({
         email:"",
         password:""
@@ -23,6 +25,8 @@ export default function Login(){
         alert("you are login unsuccessfull")
     }
     alert("you are login successfull")
+    navigate("/dashboard")
+
    }
     return(
         <>
