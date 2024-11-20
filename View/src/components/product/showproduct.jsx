@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 export default function Showproduct(){
     const [products,setproducts]=useState([])
+    const [option,setoption]=useState("")
     const navigate= useNavigate()
     const fetchproducts=async()=>{
         const responce=await fetch("http://localhost:8080/api/product")
@@ -15,8 +16,8 @@ export default function Showproduct(){
     }
     useEffect(()=>{
         fetchproducts()
-    },[products])
-
+    },[])
+console.log(option)
     const deleteproduct=async(productId)=>{
         const responce=await fetch(`http://localhost:8080/api/deleteproduct/${productId}`,{
             method:"DELETE"
@@ -25,12 +26,37 @@ export default function Showproduct(){
         alert("problem in delete the product")
        }
        alert("product deleted successfully")
+       fetchproducts()
     }
-
+    const catagoryoption=(e)=>{
+       setoption(e.target.value)
+    }
+     const filteredproduct= products.filter((item)=>
+     item.category.toLowerCase().includes(option.toLowerCase())
+    )
     return(
+        <>
+        <div className="product-header">
+            <div className="product-1stbox goback">  go to dashboard</div>
+            <div className="product-1stbox search">
+                <div >
+                    <input />
+                </div>
+                <div>
+                <select id="options" onChange={catagoryoption}>
+                    <option value="">Select category</option>
+                    {[...new Set(products.map((item) => item.category))].map((uniqueCategory) => (
+                        <option key={uniqueCategory} value={uniqueCategory}>
+                        {uniqueCategory}
+                        </option>
+                    ))}
+                </select>
+             </div>
+            </div>
+        </div>
         <div className="product-card">
             {
-                products.map((item)=>(
+                filteredproduct.map((item)=>(
                     <div className="card maincard" style={{width: "18rem"}}  >
                     <img src={item.image} className="card-img-top" alt="product Image"/>
                     <div className="card-body">
@@ -55,5 +81,6 @@ export default function Showproduct(){
             }
 
         </div>
+        </>
     )
 }
