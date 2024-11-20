@@ -4,7 +4,7 @@ const employeecontroller=require('../controllers/employee')
 const passport = require('passport')
 
 router.post('/signup',employeecontroller.signup)
-router.post('/login',passport.authenticate('local'),employeecontroller.login)
+router.post('/login',passport.authenticate('employee-local'),employeecontroller.login)
 router.get('/logout',employeecontroller.signup)
 
 

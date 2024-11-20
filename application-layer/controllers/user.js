@@ -9,7 +9,7 @@ module.exports.signup=async(req,res)=>{
             if(err){
                 return res.status(500).json({ message: 'Registration failed', error: err.message });
             }
-            passport.authenticate('local')(req,res,()=>{
+            passport.authenticate('user-local')(req,res,()=>{
                 res.status(201).json({ message: 'Registration successful', user });
             })
         })
@@ -21,6 +21,7 @@ module.exports.signup=async(req,res)=>{
 
   module.exports.login=(req,res)=>{
         res.status(200).json({ message: 'Login successful', user: req.user });
+        
   }
 
   module.exports.logout=async(req,res)=>{

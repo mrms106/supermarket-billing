@@ -23,6 +23,7 @@ export default function Signup(){
     })
     if(!responce.ok){
         alert("problem in registraion ")
+        return;
     }
     alert("you are registraion successfull")
    }

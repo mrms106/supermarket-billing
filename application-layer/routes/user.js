@@ -4,7 +4,7 @@ const usercontroller=require('../controllers/user')
 const passport = require('passport')
 
 router.post('/signup',usercontroller.signup)
-router.post('/login',passport.authenticate('local'),usercontroller.login)
+router.post('/login',passport.authenticate('user-local'),usercontroller.login)
 router.get('/logout',usercontroller.logout)
 
 

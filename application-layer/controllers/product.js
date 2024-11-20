@@ -1,6 +1,7 @@
 const products=require("../modules/products")
 
 module.exports.products=async(req,res)=>{
+  console.log(req.user)
     try{
         const allproducts=await products.find({})
         res.status(200).json({message:"data fetched success",products:allproducts})

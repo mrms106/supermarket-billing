@@ -23,6 +23,7 @@ export default function Login(){
     })
     if(!responce.ok){
         alert("you are login unsuccessfull")
+        return;
     }
     alert("you are login successfull")
     navigate("/dashboard")
