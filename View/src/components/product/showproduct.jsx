@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import './product.css'
 import { useNavigate } from "react-router-dom"
+import TextField from '@mui/material/TextField';
+import ArrowBackIosNewSharpIcon from '@mui/icons-material/ArrowBackIosNewSharp';
 
 export default function Showproduct(){
     const [products,setproducts]=useState([])
@@ -32,15 +34,17 @@ console.log(option)
        setoption(e.target.value)
     }
      const filteredproduct= products.filter((item)=>
-     item.category.toLowerCase().includes(option.toLowerCase())
+     item.category.toLowerCase().includes(option.toLowerCase()) ||
+     item.name.toLowerCase().includes(option.toLowerCase()) ||
+     item.brand.toLowerCase().includes(option.toLowerCase())
     )
     return(
         <>
         <div className="product-header">
-            <div className="product-1stbox goback">  go to dashboard</div>
-            <div className="product-1stbox search">
-                <div >
-                    <input />
+            <div className="product-1stbox goback" onClick={()=>navigate("/dashboard")}> <ArrowBackIosNewSharpIcon/> Go to dashboard</div>
+            <div className="product-1stbox ">
+                <div className="search">
+                <TextField id="outlined-basic" label="Search-products" variant="outlined" onChange={catagoryoption} />
                 </div>
                 <div>
                 <select id="options" onChange={catagoryoption}>
