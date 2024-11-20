@@ -70,13 +70,22 @@ passport.serializeUser((entity, done) => {
   }
 });
 
-passport.deserializeUser((data, done) => {
-  if (data.type === 'User') {
-    User.findById(data.id, done);
-  } else if (data.type === 'Employee') {
-    Employee.findById(data.id, done);
+passport.deserializeUser(async (data, done) => {
+  try {
+    if (data.type === 'User') {
+      const user = await User.findById(data.id);
+      done(null, user);
+    } else if (data.type === 'Employee') {
+      const employee = await Employee.findById(data.id);
+      done(null, employee);
+    } else {
+      done(new Error("Invalid user type"));
+    }
+  } catch (err) {
+    done(err);
   }
 });
+
 // parse data
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
