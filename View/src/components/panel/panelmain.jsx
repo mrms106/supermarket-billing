@@ -15,7 +15,7 @@ export default function PanelMain(){
            <div className="dashboard-box"> show  Employee </div>
            </div>
            <div>
-           <div className="dashboard-box"> Add employees </div>
+           <div className="dashboard-box"onClick={()=>navigate('/addemployee')}> Add employees </div>
            <div className="dashboard-box"  onClick={()=>navigate('/addproduct')}> Add Products </div>
            </div>
             <div>

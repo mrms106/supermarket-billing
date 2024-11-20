@@ -2,21 +2,22 @@ const passport=require('passport')
 const employee=require('../modules/employee')
 
 module.exports.signup=async(req,res)=>{
-    const {empId,name,password}=req.body
-    console.log(empId,name)
+    const {empId,name}=req.body;
+    const password=empId
+    console.log(empId,name,password)
     const user = new employee({ empId,name });
     try{
         employee.register(user,password,(err,user)=>{
             if(err){
                 return res.status(500).json({ message: 'Registration failed', error: err.message });
             }
-            passport.authenticate('local')(req,res,()=>{
+           
                 res.status(201).json({ message: 'Registration successful', user });
-            })
+            
         })
     }catch(err){
         console.log(err)
-        res.status(400).json({message:"something went wrong"})
+        res.status(400).json({message:"something went wrong",error: err.message})
     }
   }
 

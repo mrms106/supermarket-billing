@@ -19,7 +19,7 @@ export default function Showproduct(){
     useEffect(()=>{
         fetchproducts()
     },[])
-console.log(option)
+
     const deleteproduct=async(productId)=>{
         const responce=await fetch(`http://localhost:8080/api/deleteproduct/${productId}`,{
             method:"DELETE"
