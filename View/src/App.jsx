@@ -10,6 +10,7 @@ import UpdateProduct from './components/product/updateproduct';
 import Addproduct from './components/product/addproduct';
 import AddEmployee from './components/employee/createemplyee';
 import Showemployee from './components/employee/showemployee';
+import EmpLogin from './components/user/emplogin';
 function App() {
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/addproduct' element={<Addproduct/>} />
           <Route path='/addemployee' element={<AddEmployee/>} />
           <Route path='/showemployee' element={<Showemployee/>} />
+          <Route path='/Emplogin' element={<EmpLogin/>} />
     </Routes>
    </Router>
     </>

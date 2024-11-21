@@ -9,7 +9,7 @@ export default function Startscreen(){
             <div className='start-box' onClick={()=>navigate('/login')}>
                 Continue As Owner
             </div>
-            <div className='start-box' onClick={()=>navigate('/login')}>
+            <div className='start-box' onClick={()=>navigate('/Emplogin')}>
                 Continue As a Cashier
             </div>
 
