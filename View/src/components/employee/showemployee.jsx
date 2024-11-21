@@ -18,7 +18,17 @@ export default function Showemployee(){
    useEffect(()=>{
     fetchEmployees()
    },[])
-
+const deleteEmployee=async(empId)=>{
+    const responce= await fetch(`http://localhost:8080/api/employee/deleteemp/${empId}`,{
+        method:"DELETE"
+    })
+    if(!responce.ok){
+        alert("problem in delete the employee")
+        return;
+    }
+    fetchEmployees()
+    alert("Employee removed from database succefully..")
+}
     return(
         <div className='employee-main'>
             <h2>Employee List</h2>
@@ -30,7 +40,7 @@ export default function Showemployee(){
                    <div className="empId">Employee Id: {emp.empId}</div>
                 </div>
                 <div className="line"></div>
-                <div className="button">
+                <div className="button" onClick={()=>deleteEmployee(emp._id)}>
                    <span>remove employee</span>
                 </div>
                 

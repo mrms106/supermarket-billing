@@ -44,3 +44,14 @@ module.exports.signup=async(req,res)=>{
         res.status(404).json({message:"error to get employees",err:err})
     }
   }
+
+module.exports.deleteEployee=async(req,res)=>{
+    const empId=req.params.id;
+    try{
+        await employee.findByIdAndDelete(empId)
+        res.status(200).json({message:'employee is removed from database succefully'})
+    }catch(err){
+        console.log(err)
+        res.status(404).json({message:"error to get employees",err:err})
+    }
+}
