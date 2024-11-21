@@ -34,3 +34,13 @@ module.exports.signup=async(req,res)=>{
         res.status(200).json({message:"logout successfull"})
     })
   }
+
+  module.exports.employeeData=async(req,res)=>{
+    try{
+        const employees= await employee.find({})
+        res.status(200).json({message:"employees as following",employees:employees})
+    }catch(err){
+        console.log(err)
+        res.status(404).json({message:"error to get employees",err:err})
+    }
+  }
