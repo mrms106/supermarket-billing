@@ -1,0 +1,50 @@
+.employee-main{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.employee-card{
+    display: flex;
+    width: 500px;
+    height: 100px;
+    border: 1px solid rgb(45, 45, 101);
+    margin: 20px;
+    border-radius: 4px;
+  justify-content: space-between;
+  max-height: auto;
+}
+
+.employee-card .info{
+    padding: 15px;
+    width:55%
+}
+
+.employee-card .button{
+    margin-right: 20px;
+    margin-top: 25px;
+    border: 2px solid rgb(45, 45, 101) ;
+    height: 50px;
+    width: 150px;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.employee-card .button:hover{
+    background-color: rgb(45, 45, 101);
+    color: white;
+}
+.employee-card .line{
+    width: 1.5px;
+    height: 80px;
+    background-color: rgb(45, 45, 101);
+    margin-top: 10px;
+}
+.empId{
+margin-top: 10px;
+}

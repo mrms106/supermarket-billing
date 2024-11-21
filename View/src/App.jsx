@@ -9,6 +9,7 @@ import Showproduct from './components/product/showproduct';
 import UpdateProduct from './components/product/updateproduct';
 import Addproduct from './components/product/addproduct';
 import AddEmployee from './components/employee/createemplyee';
+import Showemployee from './components/employee/showemployee';
 function App() {
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/updateproduct/:id' element={<UpdateProduct/>} />
           <Route path='/addproduct' element={<Addproduct/>} />
           <Route path='/addemployee' element={<AddEmployee/>} />
+          <Route path='/showemployee' element={<Showemployee/>} />
     </Routes>
    </Router>
     </>
