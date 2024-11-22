@@ -25,7 +25,8 @@ const products = new Schema({
     image: {
         type: String,
         required: true
-    }
+    },
+    incart:Boolean
 }, { timestamps: true }); // Adds createdAt and updatedAt fields
 
 module.exports = mongoose.model('Product', products); // Exports the model directly

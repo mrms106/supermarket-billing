@@ -92,3 +92,26 @@ module.exports.addproduct = async (req, res) => {
       res.status(400).json({message:"something went wrong",err:err})
     }
   }
+
+  module.exports.addorRemovecart = async (req, res) => {
+    const productId = req.params.id;
+  
+    try {
+      const product = await products.findById(productId);
+  
+      if (!product) {
+        return res.status(404).json({ message: "Product not found" });
+      }
+  
+      if (!product.incart) {
+        await products.findByIdAndUpdate(productId, { incart: true });
+        return res.status(200).json({ message: "Product added to cart" });
+      } else {
+        await products.findByIdAndUpdate(productId, { incart: false });
+        return res.status(200).json({ message: "Product removed from cart" });
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ message: "An error occurred", error: err.message });
+    }
+  };
