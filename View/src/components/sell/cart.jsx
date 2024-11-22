@@ -24,7 +24,7 @@ export default function Cart({ products }) {
 
   // Function to handle "Generate Bill"
   const handleGenerateBill = () => {
-    // Filter the products with `stock` and prepare cart details
+    // Filter and map the products that are in the cart with entered stock
     const billDetails = products
       .filter((item) => item.incart && (stock[item._id] || 0) > 0)
       .map((item) => ({
@@ -34,18 +34,24 @@ export default function Cart({ products }) {
         stock: stock[item._id], // Entered stock/quantity
         totalPrice: item.price * (stock[item._id] || 0),
       }));
-
-    // Prepare payload
+  
+    // Prepare payload to send for generating the bill
     const payload = {
       customerName: name,
       cartProducts: billDetails,
       totalPrice: calculateTotalPrice(),
     };
-
-    setCartDetails(payload); // Update local state (for debugging/display purposes)
-   console.log(cartDetails)
-    // Send to server
-    fetch("http://localhost:8080/api/generateBill", {
+  
+    // Prepare stock update payload
+    const stockUpdates = products
+      .filter((item) => item.incart && (stock[item._id] || 0) > 0)
+      .map((item) => ({
+        productId: item._id,
+        quantity: stock[item._id], // Subtracted quantity
+      }));
+  
+    // Send the data to the server
+    fetch("http://localhost:8080/api/sell", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,13 +66,36 @@ export default function Cart({ products }) {
       })
       .then((data) => {
         console.log("Bill Generated Successfully:", data);
-        alert("Bill generated successfully!");
+  
+        // Send stock update request after generating bill
+        fetch("http://localhost:8080/api/updateStock", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ stockUpdates }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to update stock");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Stock updated successfully:", data);
+            alert("Bill generated and stock updated successfully!");
+          })
+          .catch((error) => {
+            console.error("Error updating stock:", error);
+            alert("Error updating stock");
+          });
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("Error generating bill:", error);
         alert("Error generating bill");
       });
   };
+  
 
   return (
     <>

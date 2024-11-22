@@ -10,6 +10,7 @@ const userRoute=require('./routes/user')
 const employeeRoute=require('./routes/employee')
 const productRoute=require('./routes/product')
 const Employee=require('./modules/employee')
+const sellroute=require("./routes/sell")
 const MongoStore = require('connect-mongo');
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -99,6 +100,7 @@ app.get("/",(req,res)=>{
 app.use('/api',userRoute)
 app.use('/api/employee',employeeRoute)
 app.use('/api',productRoute)
+app.use('/api',sellroute)
 
 app.listen("8080",(req,res)=>{
     console.log("server started successfully on 8080 port")
