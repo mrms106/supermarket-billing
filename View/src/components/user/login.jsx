@@ -26,7 +26,7 @@ export default function Login(){
         return;
     }
     alert("you are login successfull")
-    navigate("/dashboard")
+    window.location.href = "/dashboard";
 
    }
     return(

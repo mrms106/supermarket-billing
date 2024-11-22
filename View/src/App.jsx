@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Navbar from './components/include/navbar'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes ,Navigate} from 'react-router-dom';
 import Login from './components/user/login';
 import Signup from './components/user/signup';
 import Startscreen from './components/user/startsreen';
@@ -13,36 +13,41 @@ import Showemployee from './components/employee/showemployee';
 import EmpLogin from './components/user/emplogin';
 import Sellmain from './components/sell/sellmain';
 import IsOwner from './owner';
+import IsEmp from './isemp';
+
 function App() {
-
-  
-let[isownerlogin,setisownerlogin]=useState(null)
-    const fetchuser=async()=>{
-        try{
-        const responce=await fetch("http://localhost:8080/api/user",{
-            credentials:"include"
-        })
-        if(!responce.ok){
-            console.log("Something went wrong");
-            setisownerlogin(false);
-                return; 
+  const [isloggedIn, setisloggedIn] = useState(null); 
+  const [isowner,setisowener]=useState(null)
+    // Fetch authentication status  
+  const fetchAuth = async () => {
+    try {
+        const response = await fetch("http://localhost:8080/api/user", {
+            credentials: "include",
+        });
+        if (!response.ok) {
+            console.log("Owner authentication failed.");
+            setisloggedIn(false);
+            setisowener(null)
+            return;
         }
-        const data= await responce.json()
-        
-        setisloggedIn(true)
-    }catch(err){
-        console.log(err)
-        setisownerlogin(false)
+        const data = await response.json();
+        setisloggedIn(true);
+        setisowener(data.owner)
+    } catch (err) {
+        console.error("Error fetching owner authentication:", err);
+        setisloggedIn(false);
+        setisowener(null)
     }
-  }
-console.log(isownerlogin)
-    useEffect(()=>{
-        fetchuser()
-    },[])
-if(isownerlogin===null){
-    return <p>LOading</p>
-}
+};
 
+    useEffect(()=>{
+      fetchAuth()
+    },[])
+console.log(isowner)
+  if (isloggedIn === null && isowner === null) {
+    return <p>Loading...</p>; 
+}
+console.log(isloggedIn)
   return (
     <>
    <Router>
@@ -53,16 +58,22 @@ if(isownerlogin===null){
         
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>} />
-          <Route element={<IsOwner isownerlogin={isownerlogin}/>} >
-          <Route path='/dashboard' element={<PanelMain/>} />
-          <Route path='/allproducts' element={<Showproduct/>} />
-          <Route path='/updateproduct/:id' element={<UpdateProduct/>} />
-          <Route path='/addproduct' element={<Addproduct/>} />
-          <Route path='/addemployee' element={<AddEmployee/>} />
-          <Route path='/showemployee' element={<Showemployee/>} />
+          {isloggedIn && isowner==="owner" ? (
+          <Route element={<IsOwner isowner={isowner} isloggedIn={isloggedIn} />}>
+            <Route path='/dashboard' element={<PanelMain/>} />
+            <Route path='/allproducts' element={<Showproduct/>} />
+            <Route path='/updateproduct/:id' element={<UpdateProduct/>} />
+            <Route path='/addproduct' element={<Addproduct/>} />
+            <Route path='/addemployee' element={<AddEmployee/>} />
+            <Route path='/showemployee' element={<Showemployee/>} />
           </Route>
+): (
+  <Route path="*" element={<Navigate to="/login" />} />
+)}  
           <Route path='/Emplogin' element={<EmpLogin/>} />
-          <Route path='/sell' element={<Sellmain/>} />
+          <Route element={<IsEmp isowner={isowner} isloggedIn={isloggedIn} />}>
+            <Route path='/sell' element={<Sellmain/>} />
+          </Route>
     </Routes>
    </Router>
     </>

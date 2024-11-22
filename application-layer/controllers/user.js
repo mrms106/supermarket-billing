@@ -37,7 +37,13 @@ module.exports.signup=async(req,res)=>{
 module.exports.curruser=(req,res)=>{
     const   user=req.user
        try{
-       res.status(201).json({user})
+        if(user.email){
+       res.status(201).json({owner:"owner"})
+        }else if(user.empId){
+            res.status(201).json({owner:"emp"}) 
+        }else{
+            res.status(500).json({message:"failed to fetch"})
+        }
        }catch(err){
            res.status(500).json({message:"error in get user"})
        }

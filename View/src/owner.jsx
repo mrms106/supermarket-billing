@@ -1,6 +1,11 @@
-import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
 
-export default function IsOwner({isownerlogin}){
-    return  isownerlogin ? <Outlet />: <Navigate to="/login"/>
-}
+const IsOwner = ({ isowner ,isloggedIn}) => {
+    if (isloggedIn) {
+        return <Outlet />;
+    }
+    return  <Navigate to="/login" replace /> ; // Render child routes if the user is an owner.
+};
+
+export default IsOwner;
