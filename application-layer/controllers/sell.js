@@ -1,14 +1,15 @@
 const Cart=require("../modules/sell")
 const products=require("../modules/products")
-module.exports.Sell=async(req,res)=>{
-    const { customerName, cartProducts, totalPrice } = req.body;
-
+module.exports.Sell = async (req, res) => {
+  const { customerName, cartProducts, totalPrice } = req.body;
   try {
-    // Create a new Cart document using the data from the client
+    
+    // Create a new Cart document
     const newCart = new Cart({
       customerName,
       cartProducts, // Array of products with name, price, stock, totalPrice
       totalPrice,   // Total price of all cart products
+      date: new Date(), // Use IST-compliant date
     });
 
     // Save the cart data to the database
@@ -24,7 +25,8 @@ module.exports.Sell=async(req,res)=>{
       error: error.message,
     });
   }
-}
+};
+
 
 module.exports.updateStocks = async (req, res) => {
     const { stockUpdates } = req.body; // Array of product updates

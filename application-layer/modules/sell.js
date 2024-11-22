@@ -13,10 +13,9 @@ const cartSchema = new mongoose.Schema({
     },
   ],
   totalPrice: { type: Number, required: true },
-  createdAt: { type: Date, default: Date.now },
+  date: { type: String, required: true  }, // New field for system-generated time
 });
 
-// Create a Cart Model using the cart schema
 const Cart = mongoose.model('Cart', cartSchema);
 
 module.exports = Cart;
