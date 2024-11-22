@@ -41,7 +41,7 @@ export default function Sellmain(){
     }
     return(
         <>
-          <h3>Employee-Dashboard</h3>
+          <div className="sell-heading"><h3>Employee-Dashboard</h3></div>
         <div className="sellcart-main">
             <div className='sell-main'>
             <h3>Add products</h3>
@@ -50,7 +50,7 @@ export default function Sellmain(){
                 </div>
                 <Sellcard search={search} filteredproduct={filteredproduct} addRemoveCart={addRemoveCart} />
             </div>
-            <Cart products={products}/>
+            <Cart products={products} fetchproducts={fetchproducts} addRemoveCart={addRemoveCart}/>
         </div>
         </>
     )

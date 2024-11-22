@@ -1,6 +1,6 @@
 import { useState } from "react";
-
-export default function Cart({ products }) {
+import { generateCartReceipt } from "./reciept";
+export default function Cart({ products,fetchproducts ,addRemoveCart}) {
   // State to store stock for each product
   const [stock, setStock] = useState({});
   const [name, setName] = useState(""); // Customer name
@@ -84,6 +84,11 @@ export default function Cart({ products }) {
           .then((data) => {
             console.log("Stock updated successfully:", data);
             alert("Bill generated and stock updated successfully!");
+            
+            generateCartReceipt(payload)
+           fetchproducts()
+           setStock({})
+           setName("")
           })
           .catch((error) => {
             console.error("Error updating stock:", error);
@@ -118,6 +123,7 @@ export default function Cart({ products }) {
               <th>Price</th>
               <th>Enter Stock</th>
               <th>Price</th>
+              <th>remove</th>
             </tr>
           </thead>
           <tbody>
@@ -139,6 +145,9 @@ export default function Cart({ products }) {
                       />
                     </td>
                     <td>₹{(stock[item._id] || 0) * item.price}</td>
+                    <td>
+                      <button onClick={()=>addRemoveCart(item._id)}>Remove</button>
+                    </td>
                   </tr>
                 )
             )}
