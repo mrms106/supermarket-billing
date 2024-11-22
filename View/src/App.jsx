@@ -52,7 +52,7 @@ console.log(isloggedIn)
   return (
     <>
    <Router>
-    <Navbar/>
+    <Navbar isloggedIn={isloggedIn} isowner={isowner}/>
     <Routes>
 
         <Route path='/' element={<Startscreen/>} />
