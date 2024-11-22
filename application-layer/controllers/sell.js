@@ -64,3 +64,11 @@ module.exports.updateStocks = async (req, res) => {
     }
   };
   
+module.exports.allsales=async(req,res)=>{
+  try{
+    const sells=await Cart.find({})
+    res.status(200).send({sells:sells})
+  }catch(err){
+    console.log(err)
+  }
+}

@@ -14,6 +14,7 @@ import EmpLogin from './components/user/emplogin';
 import Sellmain from './components/sell/sellmain';
 import IsOwner from './owner';
 import IsEmp from './isemp';
+import ShowSells from './components/sell/showsales';
 
 function App() {
   const [isloggedIn, setisloggedIn] = useState(null); 
@@ -66,6 +67,8 @@ console.log(isloggedIn)
             <Route path='/addproduct' element={<Addproduct/>} />
             <Route path='/addemployee' element={<AddEmployee/>} />
             <Route path='/showemployee' element={<Showemployee/>} />
+            <Route path='/allsales' element={<ShowSells/>} />
+            <Route path='/todaysells' element={<ShowSells/>} />
           </Route>
 ): (
   <Route path="*" element={<Navigate to="/login" />} />
