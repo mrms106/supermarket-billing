@@ -2,7 +2,7 @@ import TextField from '@mui/material/TextField';
 import './sell.css'
 import { useState,useEffect } from 'react';
 import Sellcard from './sellcard';
-
+import Cart from './cart';
 export default function Sellmain(){
 
     const [products,setproducts]=useState([])
@@ -40,12 +40,18 @@ export default function Sellmain(){
         fetchproducts()
     }
     return(
-        <div className='sell-main'>
-            <h3>Employee-Dashboard</h3>
-            <div className='sell-input'>
-            <TextField fullWidth label="Search by name to add item to sell cart" id="fullWidth" onChange={(e)=>setserch(e.target.value)}/>
+        <>
+          <h3>Employee-Dashboard</h3>
+        <div className="sellcart-main">
+            <div className='sell-main'>
+            <h3>Add products</h3>
+                <div className='sell-input'>
+                <TextField fullWidth label="Search by name to add item to sell cart" id="fullWidth" onChange={(e)=>setserch(e.target.value)}/>
+                </div>
+                <Sellcard search={search} filteredproduct={filteredproduct} addRemoveCart={addRemoveCart} />
             </div>
-            <Sellcard search={search} filteredproduct={filteredproduct} addRemoveCart={addRemoveCart} />
+            <Cart products={products}/>
         </div>
+        </>
     )
 }
