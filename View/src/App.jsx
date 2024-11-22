@@ -11,6 +11,7 @@ import Addproduct from './components/product/addproduct';
 import AddEmployee from './components/employee/createemplyee';
 import Showemployee from './components/employee/showemployee';
 import EmpLogin from './components/user/emplogin';
+import Sellmain from './components/sell/sellmain';
 function App() {
 
 
@@ -19,9 +20,9 @@ function App() {
    <Router>
     <Navbar/>
     <Routes>
+        <Route path='/' element={<Startscreen/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>} />
-          <Route path='/start' element={<Startscreen/>} />
           <Route path='/dashboard' element={<PanelMain/>} />
           <Route path='/allproducts' element={<Showproduct/>} />
           <Route path='/updateproduct/:id' element={<UpdateProduct/>} />
@@ -29,6 +30,7 @@ function App() {
           <Route path='/addemployee' element={<AddEmployee/>} />
           <Route path='/showemployee' element={<Showemployee/>} />
           <Route path='/Emplogin' element={<EmpLogin/>} />
+          <Route path='/sell' element={<Sellmain/>} />
     </Routes>
    </Router>
     </>

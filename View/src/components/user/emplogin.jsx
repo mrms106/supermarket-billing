@@ -23,7 +23,7 @@ export default function EmpLogin() {
 
             if (response.ok) {
                 alert("Hey Welcome Again, Have a Good Day!");
-                navigate("/dashboard"); // Navigate to a dashboard or home page
+                navigate("/sell"); // Navigate to a dashboard or home page
             } else if (response.status === 401) {
                 alert("Invalid credentials. Please check your ID.");
             } else {
