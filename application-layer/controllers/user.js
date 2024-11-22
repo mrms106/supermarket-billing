@@ -33,3 +33,13 @@ module.exports.signup=async(req,res)=>{
         res.status(200).json({message:"logout successfull"})
     })
   }
+
+module.exports.curruser=(req,res)=>{
+    const   user=req.user
+       try{
+       res.status(201).json({user})
+       }catch(err){
+           res.status(500).json({message:"error in get user"})
+       }
+   }
+   
