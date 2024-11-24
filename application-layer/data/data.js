@@ -5,7 +5,7 @@ products=[
         "stock": 100,
         "brand": "Tilda",
         "category": "Grocery",
-        "image": "https://example.com/images/basmati_rice.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToRorZi9Lv1X_7DuhB59fG0oWpLxQPxDGm6g&s"
     },
     {
         "name": "All-Purpose Flour",
@@ -13,7 +13,7 @@ products=[
         "stock": 50,
         "brand": "Pillsbury",
         "category": "Grocery",
-        "image": "https://example.com/images/flour.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxHDMQSDlPlDgfLNZ98m438JxSrdN2JY3uVg&s"
     },
     {
         "name": "Whole Milk",
@@ -21,7 +21,7 @@ products=[
         "stock": 200,
         "brand": "Amul",
         "category": "Dairy",
-        "image": "https://example.com/images/whole_milk.jpg"
+        "image": "https://cdn.zeptonow.com/production///tr:w-600,ar-733-904,pr-true,f-auto,q-80/cms/product_variant/1c3ab8b0-d97e-4c0c-8a2b-8d5af617f1d4.png"
     },
     {
         "name": "Cheddar Cheese",
@@ -29,7 +29,7 @@ products=[
         "stock": 80,
         "brand": "Britannia",
         "category": "Dairy",
-        "image": "https://example.com/images/cheddar_cheese.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS91PkPJrspAawIa0D9BJ_idQU7FPHqCFWzAA&s"
     },
     {
         "name": "Potato Chips",
@@ -37,7 +37,7 @@ products=[
         "stock": 150,
         "brand": "Lays",
         "category": "Snacks",
-        "image": "https://example.com/images/potato_chips.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3lDA8yj2QOj_YBSlEFgESs1ziHbWHNHaX1g&s"
     },
     {
         "name": "Chocolate Cookies",
@@ -45,7 +45,7 @@ products=[
         "stock": 120,
         "brand": "Oreo",
         "category": "Snacks",
-        "image": "https://example.com/images/chocolate_cookies.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVte8ogFtr01rRWS2AHa_XIPQYH07BETj8Wg&s"
     },
     {
         "name": "Orange Juice",
@@ -53,7 +53,7 @@ products=[
         "stock": 75,
         "brand": "Tropicana",
         "category": "Beverages",
-        "image": "https://example.com/images/orange_juice.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN15dY2BqxRHxD_jkwf-QB9BmqzLVqIsX0aQ&s"
     },
     {
         "name": "Green Tea",
@@ -61,7 +61,7 @@ products=[
         "stock": 40,
         "brand": "Lipton",
         "category": "Beverages",
-        "image": "https://example.com/images/green_tea.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQitBfZLncXSHo5K48Yo60bu8kjg0TZfVx24A&s"
     },
     {
         "name": "Shampoo",
@@ -69,7 +69,7 @@ products=[
         "stock": 60,
         "brand": "Head & Shoulders",
         "category": "Personal Care",
-        "image": "https://example.com/images/shampoo.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ29uRoYIHrAzHZ4hTv2KV1gK9h2eA9iiPTEw&s"
     },
     {
         "name": "Toothpaste",
@@ -77,7 +77,7 @@ products=[
         "stock": 90,
         "brand": "Colgate",
         "category": "Personal Care",
-        "image": "https://example.com/images/toothpaste.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ29uRoYIHrAzHZ4hTv2KV1gK9h2eA9iiPTEw&s"
     },
     {
         "name": "Brown Bread",
@@ -93,7 +93,7 @@ products=[
         "stock": 45,
         "brand": "Skippy",
         "category": "Grocery",
-        "image": "https://example.com/images/peanut_butter.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkPz4WbjZGHRBGEHzpcCmDLWALPxUQAfvHyQ&s"
     },
     {
         "name": "Sugar",
@@ -101,7 +101,7 @@ products=[
         "stock": 180,
         "brand": "Madhur",
         "category": "Grocery",
-        "image": "https://example.com/images/sugar.jpg"
+        "image": "https://www.bigbasket.com/media/uploads/p/xxl/40253563_1-madhur-sugar-pure-hygienic-fine-grain-natural-sulphur-free.jpg"
     },
     {
         "name": "Salt",
@@ -109,7 +109,7 @@ products=[
         "stock": 250,
         "brand": "Tata",
         "category": "Grocery",
-        "image": "https://example.com/images/salt.jpg"
+        "image": "https://m.media-amazon.com/images/I/61waHSAvTVL.jpg"
     },
     {
         "name": "Olive Oil",
@@ -117,7 +117,7 @@ products=[
         "stock": 30,
         "brand": "Borges",
         "category": "Grocery",
-        "image": "https://example.com/images/olive_oil.jpg"
+        "image": "https://rukminim2.flixcart.com/image/850/1000/l0bbonk0/edible-oil/i/i/x/500-extra-virgin-1-plastic-bottle-olive-oil-kayaboost-original-imagc4ygjtungtym.jpeg?q=90&crop=false"
     },
     {
         "name": "Instant Coffee",
@@ -125,7 +125,7 @@ products=[
         "stock": 90,
         "brand": "Nescafe",
         "category": "Beverages",
-        "image": "https://example.com/images/instant_coffee.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_V44d2O0rkqpaPjj9v8-UKEfnAdDnKuWl7w&s"
     },
     {
         "name": "Green Apples",
@@ -133,7 +133,7 @@ products=[
         "stock": 200,
         "brand": "Organic",
         "category": "Fruits",
-        "image": "https://example.com/images/green_apples.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFPkw0kZ7tVzNZf6oLMasF8m8Pu2vY9DmXHA&s"
     },
     {
         "name": "Bananas",
@@ -141,7 +141,7 @@ products=[
         "stock": 300,
         "brand": "FreshFarm",
         "category": "Fruits",
-        "image": "https://example.com/images/bananas.jpg"
+        "image": "https://5.imimg.com/data5/CZ/BH/LH/ANDROID-90143846/product-jpeg-500x500.jpeg"
     },
     {
         "name": "Tomato Ketchup",
@@ -149,7 +149,7 @@ products=[
         "stock": 100,
         "brand": "Heinz",
         "category": "Condiments",
-        "image": "https://example.com/images/tomato_ketchup.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-D641Lxc2n6SzAoDm4NJH8xjs21-bMQEvCQ&s"
     },
     {
         "name": "Mayonnaise",
@@ -157,7 +157,7 @@ products=[
         "stock": 70,
         "brand": "Hellmann's",
         "category": "Condiments",
-        "image": "https://example.com/images/mayonnaise.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-D641Lxc2n6SzAoDm4NJH8xjs21-bMQEvCQ&s"
     },
     {
         "name": "Dishwashing Liquid",
@@ -165,7 +165,7 @@ products=[
         "stock": 120,
         "brand": "Vim",
         "category": "Household",
-        "image": "https://example.com/images/dishwashing_liquid.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbbyUz8ZBVuxHd1zv5Jxol4XeYnfvwDjj15w&s"
     },
     {
         "name": "Laundry Detergent",
@@ -173,7 +173,7 @@ products=[
         "stock": 50,
         "brand": "Tide",
         "category": "Household",
-        "image": "https://example.com/images/laundry_detergent.jpg"
+        "image": "https://m.media-amazon.com/images/I/41p3U4nMjoL._AC_.jpg"
     },
     {
         "name": "Chicken Breast",
@@ -181,7 +181,7 @@ products=[
         "stock": 100,
         "brand": "FreshMeat",
         "category": "Meat",
-        "image": "https://example.com/images/chicken_breast.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHtkp-5OdB0mqTNlED43yI5t2P5DCLa_Te2w&s"
     },
     {
         "name": "Salmon Fillet",
@@ -189,7 +189,7 @@ products=[
         "stock": 40,
         "brand": "Ocean's Best",
         "category": "Seafood",
-        "image": "https://example.com/images/salmon_fillet.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE2kXgxEL9TDN1euYjxi4IKnG5djSvHPGy3A&s"
     },
     {
         "name": "Frozen Peas",
@@ -205,7 +205,7 @@ products=[
         "stock": 60,
         "brand": "Amul",
         "category": "Frozen Foods",
-        "image": "https://example.com/images/vanilla_ice_cream.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5yRQ5osNTi9DNM_iXowp2L6umo1iWKFMkJQ&s"
     },
     {
         "name": "Chocolate Bar",
@@ -213,7 +213,7 @@ products=[
         "stock": 100,
         "brand": "Cadbury",
         "category": "Snacks",
-        "image": "https://example.com/images/chocolate_bar.jpg"
+        "image": "https://www.jiomart.com/images/product/original/490659553/cadbury-dairy-milk-silk-chocolate-64-g-product-images-o490659553-p490659553-0-202404170405.jpg?im=Resize=(420,420)"
     },
     {
         "name": "Face Wash",
@@ -221,7 +221,7 @@ products=[
         "stock": 70,
         "brand": "Neutrogena",
         "category": "Personal Care",
-        "image": "https://example.com/images/face_wash.jpg"
+        "image": "https://www.jiomart.com/images/product/original/490659553/cadbury-dairy-milk-silk-chocolate-64-g-product-images-o490659553-p490659553-0-202404170405.jpg?im=Resize=(420,420)"
     },
     {
         "name": "Packaged Water",
@@ -229,7 +229,7 @@ products=[
         "stock": 300,
         "brand": "Bisleri",
         "category": "Beverages",
-        "image": "https://example.com/images/packaged_water.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7xIxryUr-CQ2ILu0fREn7Bf0P_syITe1r0A&s"
     },
     {
         "name": "Cereal",
@@ -245,7 +245,7 @@ products=[
         "stock": 40,
         "brand": "Domino's",
         "category": "Frozen Foods",
-        "image": "https://example.com/images/frozen_pizza.jpg"
+        "image": "https://img.etimg.com/thumb/width-1200,height-1200,imgsize-35079,resizemode-75,msid-45329585/industry/cons-products/food/india-emerges-as-dominos-biggest-market-outside-us.jpg"
     },
     {
         "name": "Basmati Rice",
@@ -278,73 +278,9 @@ products=[
         "stock": 80,
         "brand": "Nutty Delight",
         "category": "Snacks",
-        "image": "https://example.com/images/cashew_nuts.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcXH29QvXX7qEvvvRjdAuCi_T5Juf2T3MGQA&s"
     },
-    {
-        "name": "Almond Milk",
-        "price": 3.5,
-        "stock": 60,
-        "brand": "Silk",
-        "category": "Beverages",
-        "image": "https://example.com/images/almond_milk.jpg"
-    },
-    {
-        "name": "Greek Yogurt",
-        "price": 2.0,
-        "stock": 100,
-        "brand": "Chobani",
-        "category": "Dairy",
-        "image": "https://example.com/images/greek_yogurt.jpg"
-    },
-    {
-        "name": "Organic Eggs",
-        "price": 4.2,
-        "stock": 120,
-        "brand": "Happy Eggs",
-        "category": "Dairy",
-        "image": "https://example.com/images/organic_eggs.jpg"
-    },
-    {
-        "name": "Spaghetti Pasta",
-        "price": 2.5,
-        "stock": 150,
-        "brand": "Barilla",
-        "category": "Grocery",
-        "image": "https://example.com/images/spaghetti_pasta.jpg"
-    },
-    {
-        "name": "Tomato Soup",
-        "price": 3.0,
-        "stock": 100,
-        "brand": "Campbell's",
-        "category": "Grocery",
-        "image": "https://example.com/images/tomato_soup.jpg"
-    },
-    {
-        "name": "Coconut Water",
-        "price": 2.8,
-        "stock": 80,
-        "brand": "Vita Coco",
-        "category": "Beverages",
-        "image": "https://example.com/images/coconut_water.jpg"
-    },
-    {
-        "name": "Carrot Juice",
-        "price": 4.0,
-        "stock": 60,
-        "brand": "Bolthouse Farms",
-        "category": "Beverages",
-        "image": "https://example.com/images/carrot_juice.jpg"
-    },
-    {
-        "name": "Trail Mix",
-        "price": 6.0,
-        "stock": 90,
-        "brand": "Nature Valley",
-        "category": "Snacks",
-        "image": "https://example.com/images/trail_mix.jpg"
-    },
-    {
+      {
         "name": "Canned Tuna",
         "price": 2.0,
         "stock": 150,

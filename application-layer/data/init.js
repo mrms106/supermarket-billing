@@ -9,6 +9,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
     console.log("Connected to MongoDB");
     
     // Insert the products data
+   
     return Product.insertMany(products);
   })
   .then((insertedProducts) => {
