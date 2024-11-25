@@ -6,10 +6,10 @@ export default function Startscreen(){
     return(
         <div className="start-screen">
 
-            <div className='start-box' onClick={()=>navigate('/login')}>
+            <div className='start-box' onClick={()=>navigate('/dashboard')}>
                 Continue As Owner
             </div>
-            <div className='start-box' onClick={()=>navigate('/Emplogin')}>
+            <div className='start-box' onClick={()=>navigate('/sell')}>
                 Continue As a Cashier
             </div>
 
