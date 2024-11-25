@@ -30,7 +30,7 @@ export default function ShowSells(){
              <div className="col-sm-6 sell-show">
              <div className="card ">
                <div className="card-body">
-                 <h5 className="card-title">Buyer-Name: {sell.name}</h5>
+                 <h5 className="card-title">Buyer-Name: {sell.customerName}</h5>
                  <p className="card-text">Buy-Date:{sell.date}</p>             
                  <button href="#" className="btn btn-primary"  onClick={() => generateCartReceipt(sell)}>Print receipt </button>
                </div>
