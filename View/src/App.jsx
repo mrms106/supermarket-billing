@@ -15,6 +15,7 @@ import Sellmain from './components/sell/sellmain';
 import IsOwner from './owner';
 import IsEmp from './isemp';
 import ShowSells from './components/sell/showsales';
+import TodaySells from './components/sell/todaySells';
 
 function App() {
   const [isloggedIn, setisloggedIn] = useState(null); 
@@ -68,7 +69,7 @@ console.log(isloggedIn)
             <Route path='/addemployee' element={<AddEmployee/>} />
             <Route path='/showemployee' element={<Showemployee/>} />
             <Route path='/allsales' element={<ShowSells/>} />
-            <Route path='/todaysells' element={<ShowSells/>} />
+            <Route path='/todaysells' element={<TodaySells/>} />
           </Route>
 ): (
   <Route path="*" element={<Navigate to="/login" />} />
