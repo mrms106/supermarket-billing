@@ -72,3 +72,20 @@ module.exports.allsales=async(req,res)=>{
     console.log(err)
   }
 }
+
+module.exports.todaySales = async (req, res) => {
+  try {
+    const todayDate = new Date();
+    const todayString = todayDate.toDateString(); // Extracts only the date portion in string format, e.g., "Tue Nov 25 2024"
+
+    // Query for today's sales based on the string match
+    const sells = await Cart.find({
+      date: { $regex: `^${todayString}` } // Matches the start of the date string
+    });
+
+    res.status(200).send({ sells });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Internal Server Error', error: err });
+  }
+};

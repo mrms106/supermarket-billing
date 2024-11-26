@@ -7,6 +7,7 @@ router.post("/sell",sellcontroller.Sell)
 router.post('/updateStock', sellcontroller.updateStocks);
 
 router.get("/allsales",sellcontroller.allsales)
+router.get("/todaysells",sellcontroller.todaySales)
   
 
 module.exports=router
